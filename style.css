@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;padding:30px;background:linear-gradient(135deg,#4f46e5,#06b6d4,#10b981);background-size:300% 300%;animation:bg 12s infinite}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.card{max-width:900px;width:100%;background:rgba(255,255,255,.15);backdrop-filter:blur(14px);padding:35px;border-radius:22px;box-shadow:0 12px 30px rgba(0,0,0,.25);color:#fff}
+h1{text-align:center;margin-bottom:10px}.subtitle{text-align:center;margin-bottom:25px}
+input[type=file]{width:100%;padding:18px;border:2px dashed #fff;background:rgba(255,255,255,.08);border-radius:15px;color:#fff}
+button{margin-top:20px;width:100%;padding:16px;border:none;border-radius:14px;background:linear-gradient(45deg,#ff7a18,#ffb703);color:#fff;font-size:18px;font-weight:700;cursor:pointer}
+button:hover{transform:translateY(-2px)}
+#status{text-align:center;margin-top:18px;font-weight:bold}
+#result{margin-top:25px;background:#fff;color:#222;padding:22px;border-radius:16px}
+.skill{display:inline-block;background:#4f46e5;color:#fff;padding:6px 12px;border-radius:20px;margin:4px}
+footer{text-align:center;margin-top:20px}

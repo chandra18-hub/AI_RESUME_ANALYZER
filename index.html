@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Resume Analyzer</title>
+<link rel="stylesheet" href="css/style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+</head>
+<body>
+<div class="card">
+<h1>🤖 AI Resume Analyzer</h1>
+<p class="subtitle">Upload your PDF, DOCX or TXT resume and get an ATS-style analysis.</p>
+<input type="file" id="file" accept=".pdf,.docx,.txt">
+<button onclick="analyzeFile()">Analyze Resume</button>
+<div id="status"></div>
+<div id="result"></div>
+<footer>Made with ❤️ using HTML, CSS & JavaScript</footer>
+</div>
+<script src="js/analyzer.js"></script>
+</body>
+</html>
