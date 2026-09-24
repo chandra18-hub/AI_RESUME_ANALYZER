@@ -1,23 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Resume Analyzer</title>
-<link rel="stylesheet" href="css/style.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI Resume Analyzer - Analyze your resume with ATS-style scoring, skill detection and improvement suggestions.">
+  <title>AI Resume Analyzer | Smart Resume Review</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
 </head>
 <body>
-<div class="card">
-<h1>🤖 AI Resume Analyzer</h1>
-<p class="subtitle">Upload your PDF, DOCX or TXT resume and get an ATS-style analysis.</p>
-<input type="file" id="file" accept=".pdf,.docx,.txt">
-<button onclick="analyzeFile()">Analyze Resume</button>
-<div id="status"></div>
-<div id="result"></div>
-<footer>Made with ❤️ using HTML, CSS & JavaScript</footer>
-</div>
-<script src="js/analyzer.js"></script>
+  <div class="page-bg"></div>
+
+  <header class="navbar">
+    <a class="brand" href="#">
+      <span class="brand-icon">AI</span>
+      <span>Resume<span class="brand-accent">Analyzer</span></span>
+    </a>
+    <span class="nav-badge">Smart ATS Review</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> AI-powered resume analysis</div>
+      <h1>Make your resume<br><span>stand out.</span></h1>
+      <p>Upload your resume and get an instant ATS-style score, skill detection, and practical suggestions to improve your profile.</p>
+    </section>
+
+    <section class="analyzer-card">
+      <div class="card-header">
+        <div>
+          <h2>Analyze your resume</h2>
+          <p>Supports PDF, DOCX and TXT files</p>
+        </div>
+        <div class="secure-badge">✓ Quick &amp; simple</div>
+      </div>
+
+      <label class="upload-area" for="file">
+        <div class="upload-icon">↑</div>
+        <strong>Drop your resume here</strong>
+        <span>or click to browse from your computer</span>
+        <small>PDF • DOCX • TXT</small>
+        <input type="file" id="file" accept=".pdf,.docx,.txt">
+      </label>
+
+      <div id="file-name" class="file-name">No file selected</div>
+
+      <button class="analyze-btn" type="button" onclick="analyzeFile()">
+        <span>Analyze Resume</span>
+        <span class="arrow">→</span>
+      </button>
+
+      <div class="privacy-note">🔒 Your resume is analyzed in your browser for this demo.</div>
+      <div id="status" aria-live="polite"></div>
+      <div id="result"></div>
+    </section>
+
+    <section class="features">
+      <article class="feature">
+        <div class="feature-icon purple">◈</div>
+        <div><h3>ATS Score</h3><p>Get a quick compatibility score based on resume content.</p></div>
+      </article>
+      <article class="feature">
+        <div class="feature-icon blue">✦</div>
+        <div><h3>Skill Detection</h3><p>Identify technical skills mentioned in your resume.</p></div>
+      </article>
+      <article class="feature">
+        <div class="feature-icon green">✓</div>
+        <div><h3>Actionable Tips</h3><p>Find missing sections and improve your resume quality.</p></div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>AI Resume Analyzer</span>
+    <span>Built with HTML, CSS &amp; JavaScript</span>
+  </footer>
+
+  <script src="analyzer.js"></script>
+  <script>
+    const fileInput = document.getElementById("file");
+    const fileName = document.getElementById("file-name");
+
+    fileInput.addEventListener("change", () => {
+      fileName.textContent = fileInput.files[0]
+        ? "Selected: " + fileInput.files[0].name
+        : "No file selected";
+    });
+  </script>
 </body>
 </html>
